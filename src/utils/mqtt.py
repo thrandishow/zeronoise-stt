@@ -18,7 +18,9 @@ def on_connect(client: mqtt.Client, userdata, flags, reason_code, properties) ->
         properties: Объект свойств MQTT v5 с деталями подключения
     """
     protocol_version = "MQTTv5" if properties is not None else "MQTTv3.1.1"
-    logger.info(f"Connected to MQTT Broker at {broker_url}:{broker_port}")
+    logger.info(
+        f"Connected to MQTT Broker at {settings.broker_url}:{settings.broker_port}"
+    )
     logger.info(f"Connection Result: {reason_code} | Protocol: {protocol_version}")
 
 
